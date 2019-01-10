@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		03D1C8FC21E7D19500589220 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 03D1C8FB21E7D19500589220 /* main.cpp */; };
+		03D1C90421E7D54D00589220 /* libiomp5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 03D1C90321E7D54D00589220 /* libiomp5.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +26,7 @@
 /* Begin PBXFileReference section */
 		03D1C8F821E7D19500589220 /* ProgParalela */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ProgParalela; sourceTree = BUILT_PRODUCTS_DIR; };
 		03D1C8FB21E7D19500589220 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		03D1C90321E7D54D00589220 /* libiomp5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiomp5.dylib; path = ../../../../../../usr/local/Cellar/llvm/7.0.1/lib/libiomp5.dylib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03D1C90421E7D54D00589220 /* libiomp5.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,6 +46,7 @@
 			children = (
 				03D1C8FA21E7D19500589220 /* ProgParalela */,
 				03D1C8F921E7D19500589220 /* Products */,
+				03D1C90221E7D54D00589220 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,6 +64,14 @@
 				03D1C8FB21E7D19500589220 /* main.cpp */,
 			);
 			path = ProgParalela;
+			sourceTree = "<group>";
+		};
+		03D1C90221E7D54D00589220 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				03D1C90321E7D54D00589220 /* libiomp5.dylib */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -239,8 +251,15 @@
 		03D1C90021E7D19500589220 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CC = "/usr/local/Cellar/llvm/7.0.1/bin/clang-7";
+				CLANG_ENABLE_MODULES = NO;
 				CODE_SIGN_STYLE = Automatic;
+				COMPILER_INDEX_STORE_ENABLE = NO;
 				DEVELOPMENT_TEAM = 5ASV836QR2;
+				HEADER_SEARCH_PATHS = /usr/local/Cellar/llvm/7.0.1/lib/clang/7.0.1/include;
+				LIBRARY_SEARCH_PATHS = /usr/local/Cellar/llvm/7.0.1/lib/;
+				OTHER_CFLAGS = "-fopenmp";
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -248,8 +267,15 @@
 		03D1C90121E7D19500589220 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CC = "/usr/local/Cellar/llvm/7.0.1/bin/clang-7";
+				CLANG_ENABLE_MODULES = NO;
 				CODE_SIGN_STYLE = Automatic;
+				COMPILER_INDEX_STORE_ENABLE = NO;
 				DEVELOPMENT_TEAM = 5ASV836QR2;
+				HEADER_SEARCH_PATHS = /usr/local/Cellar/llvm/7.0.1/lib/clang/7.0.1/include;
+				LIBRARY_SEARCH_PATHS = /usr/local/Cellar/llvm/7.0.1/lib/;
+				OTHER_CFLAGS = "-fopenmp";
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
